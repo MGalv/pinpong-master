@@ -22,10 +22,6 @@ class Game < ActiveRecord::Base
     min_score.user
   end
 
-  def winner
-    max_score.user
-  end
-
   def opponent(user)
     (users - [user]).first
   end
