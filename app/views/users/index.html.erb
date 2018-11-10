@@ -1,0 +1,18 @@
+<h1 class='page-header'>Leaderboard</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Score</th>
+    <th>Games Played</th>
+  </tr>
+  <% @users.each_with_index do |user, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= user.email %></td>
+      <td><%= user.points.zero? ? 'X' : user.points %></td>
+      <td><%= user.scores.count %></td>
+    </tr>
+  <% end %>
+</table>

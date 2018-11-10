@@ -1,0 +1,19 @@
+<h1 class='page-header'>History</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Opponent</th>
+    <th>Score</th>
+    <th>Result</th>
+  </tr>
+  <% @scores.each do |score| %>
+    <tr>
+      <td><%= score.played_at.strftime('%b %e') %></td>
+      <td><%= score.opponent(current_user).email %></td>
+      <td><%= "#{score.max_score.points}-#{score.min_score.points}" %></td>
+      <td><%= score.status.upcase.first %></td>
+    </tr>
+  <% end %>
+</table>
+
